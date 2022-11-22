@@ -19,6 +19,7 @@ Conditions:
 Resources:
   Certificate:
     Type: AWS::CertificateManager::Certificate
+    DeletionPolicy: Retain
     Properties:
       DomainName: !Sub '${SubDomain}.${DomainName}'
       SubjectAlternativeNames:

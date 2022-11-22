@@ -39,6 +39,7 @@ Resources:
 
   CopyLayerVersion:
     Type: "AWS::Serverless::LayerVersion"
+    DeletionPolicy: Delete
     Properties:
       ContentUri: ../witch.zip
       CompatibleRuntimes:
@@ -46,6 +47,7 @@ Resources:
 
   CopyRole:
     Type: "AWS::IAM::Role"
+    DeletionPolicy: Delete
     Properties:
       AssumeRolePolicyDocument:
         Statement:
@@ -77,6 +79,7 @@ Resources:
 
   CopyFunction:
     Type: AWS::Serverless::Function
+    DeletionPolicy: Delete
     Properties:
       CodeUri: ../www
       Environment:

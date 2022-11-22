@@ -47,6 +47,7 @@ Parameters:
 Resources:
   CustomResourceStack:
     Type: AWS::CloudFormation::Stack
+    DeletionPolicy: Delete
     Properties:
       TemplateURL: ./custom-resource.yaml
       Tags:
@@ -55,6 +56,7 @@ Resources:
 
   AcmCertificateStack:
     Type: AWS::CloudFormation::Stack
+    DeletionPolicy: Delete
     Properties:
       TemplateURL: ./acm-certificate.yaml
       Parameters:
@@ -68,6 +70,7 @@ Resources:
 
   CloudFrontStack:
     Type: AWS::CloudFormation::Stack
+    DeletionPolicy: Delete
     Properties:
       TemplateURL: ./cloudfront-site.yaml
       Parameters:
